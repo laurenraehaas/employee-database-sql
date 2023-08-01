@@ -2,8 +2,12 @@ const db = require('../db/connection')
 
 viewAllEmployees = () => {
     return new Promise((resolve, reject) => {
-        db.query('SELECT * FROM employees', (err,results) => {
-            console.log(results)
+        db.query('SELECT * FROM employee', (err,results) => {
+            if (err) {
+                reject(err)
+            } else {
+                resolve(results)
+            }
         })
     })
 }

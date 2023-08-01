@@ -3,7 +3,11 @@ const db = require('../db/connection')
 viewAllDepartments = () => {
     return new Promise((resolve, reject) => {
         db.query('SELECT * FROM department', function (err, results) {
-            console.log(results);
+            if (err) {
+                reject(err)
+            } else {
+                resolve(results)
+            }
           });
     })
 }
@@ -11,7 +15,11 @@ viewAllDepartments = () => {
 addDepartment = (departmentName) => {
     return new Promise((resolve, reject) => {
         db.query('INSERT INTO departments (name) VALUES (?)', [departmentName], (err, results) => {
-            console.log(results)
+            if (err) {
+                reject(err)
+            } else {
+                resolve(results)
+            }
         })
     })
 }
