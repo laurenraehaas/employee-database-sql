@@ -5,7 +5,6 @@ const { viewAllRoles, addRole, updateEmployeeRole } = require('./assets/role')
 const { viewAllEmployees, addEmployee } = require('./assets/employee')
 
 const mysql = require('mysql2')
-//const db = mysql.createConnection('../db/connection.js')
 
 
 function menu() {
@@ -83,7 +82,7 @@ function menu() {
 
 
 function promptAddDepartment() {
-  inquirer
+  return inquirer
     .prompt([
       {
         type: 'input',
@@ -116,7 +115,7 @@ function promptAddDepartment() {
 
 
 function promptAddRole() {
-  inquirer
+  return inquirer
     .prompt([
       {
         type: 'input',
@@ -175,7 +174,7 @@ function promptAddRole() {
 
 
 function promptAddEmployee() {
-  inquirer
+  return inquirer
     .prompt([
       {
         type: 'input',

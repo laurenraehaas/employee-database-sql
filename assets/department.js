@@ -12,7 +12,7 @@ viewAllDepartments = () => {
     })
 }
 
-addDepartment = (departmentName) => {
+function addDepartment(departmentName) {
     return new Promise((resolve, reject) => {
         db.query('INSERT INTO departments (name) VALUES (?)', [departmentName], (err, results) => {
             if (err) {
