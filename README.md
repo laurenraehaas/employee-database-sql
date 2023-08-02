@@ -1,4 +1,4 @@
-# challenge-12
+# employee-database-sql
 
 ## User Story
 
